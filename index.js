@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import multer from 'multer';
-
+const PORT = process.env.PORT || 3000
 dotenv.config();
 
 // Connect to MongoDB
@@ -69,7 +69,7 @@ app.post('/submit', upload.none(), (req, res) => {
       });
   });
 // Start the server
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
+app.listen(PORT, () => {
+  console.log(`Server started on ${PORT}`);
 });
 
